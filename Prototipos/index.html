@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierva María Estética — Presentación de Prototipos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FDF6EE',
+            nude:  '#C4A882',
+            navy:  '#1A1A2E',
+            'nude-dark': '#b3956e',
+            'cream-card': '#F7EEE3',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans:  ['"Inter"', 'sans-serif'],
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%':   { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            shimmer: {
+              '0%':   { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+          },
+          animation: {
+            'fade-up-1': 'fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.1s both',
+            'fade-up-2': 'fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.3s both',
+            'fade-up-3': 'fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.5s both',
+            'fade-up-4': 'fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.65s both',
+            'fade-up-5': 'fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.8s both',
+            'fade-in':   'fadeIn 1.2s ease 0.05s both',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #FDF6EE; }
+    ::selection { background: #C4A882; color: #1A1A2E; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #FDF6EE; }
+    ::-webkit-scrollbar-thumb { background: #C4A882; }
+
+    /* Card hover line sweep */
+    .card-link { position: relative; overflow: hidden; }
+    .card-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(196,168,130,0.07) 40%,
+        transparent 80%
+      );
+      background-size: 200% 100%;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .card-link:hover::before { opacity: 1; }
+
+    /* Bottom progress bar accent */
+    .card-bar {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: #C4A882;
+      transition: width 0.5s cubic-bezier(.16,1,.3,1);
+    }
+    .card-link:hover .card-bar { width: 100%; }
+
+    /* Number counter style */
+    .proto-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(26,26,46,0.06);
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.75rem;
+      user-select: none;
+      transition: color 0.4s ease;
+    }
+    .card-link:hover .proto-num { color: rgba(196,168,130,0.15); }
+
+    /* Tag pill */
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(196,168,130,0.35);
+      color: #C4A882;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .card-link:hover .tag-pill {
+      background: #C4A882;
+      color: #1A1A2E;
+    }
+
+    /* Arrow animation */
+    .arrow-icon {
+      transition: transform 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    .card-link:hover .arrow-icon { transform: translateX(5px); }
+
+    /* Divider line */
+    .section-divider {
+      width: 40px; height: 1px;
+      background: #C4A882;
+      margin: 0 auto;
+    }
+
+    /* Agency watermark */
+    .watermark { opacity: 0.35; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-cream text-navy font-sans">
+
+  <!-- Background subtle pattern -->
+  <div class="fixed inset-0 pointer-events-none"
+    style="background-image: radial-gradient(circle at 1px 1px, rgba(196,168,130,0.08) 1px, transparent 0); background-size: 32px 32px;">
+  </div>
+
+  <div class="relative z-10 min-h-screen flex flex-col">
+
+    <!-- ─── TOP BAR ────────────────────────────────────────────────────── -->
+    <div class="animate-fade-in border-b border-nude/15 bg-cream/80 backdrop-blur-sm sticky top-0 z-20">
+      <div class="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-5 h-5 border border-nude/50 flex items-center justify-center">
+            <span class="font-serif text-[10px] font-semibold text-navy leading-none">SM</span>
+          </div>
+          <span class="font-sans text-[10px] uppercase tracking-[0.28em] text-navy/50">Sierva María Estética</span>
+        </div>
+        <span class="font-sans text-[9px] uppercase tracking-[0.25em] text-nude/60">
+          Presentación de Prototipos · 2026
+        </span>
+      </div>
+    </div>
+
+    <!-- ─── HERO HEADER ──────────────────────────────────────────────────── -->
+    <header class="text-center pt-20 pb-16 px-6">
+
+      <div class="animate-fade-up-1">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <div class="h-px w-12 bg-nude/40"></div>
+          <span class="font-sans text-[9px] uppercase tracking-[0.35em] text-nude font-semibold">
+            Agencia de Diseño Digital
+          </span>
+          <div class="h-px w-12 bg-nude/40"></div>
+        </div>
+      </div>
+
+      <div class="animate-fade-up-2">
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-light text-navy leading-[1.05] mb-5">
+          Sierva María<br>
+          <em class="font-normal italic text-nude">Estética</em>
+        </h1>
+      </div>
+
+      <div class="animate-fade-up-3 section-divider mb-7"></div>
+
+      <div class="animate-fade-up-3">
+        <p class="font-sans text-sm text-navy/55 font-light tracking-wide max-w-sm mx-auto leading-relaxed">
+          Selecciona una propuesta para explorarla.<br>
+          Cada prototipo presenta un enfoque visual distinto.
+        </p>
+      </div>
+
+    </header>
+
+    <!-- ─── PROTOTYPE CARDS ──────────────────────────────────────────────── -->
+    <main class="flex-1 max-w-6xl mx-auto w-full px-5 md:px-8 pb-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+
+        <!-- ── CARD 1 ── Editorial ──────────────────────────────────────── -->
+        <a href="./Prototipo-1/index.html"
+          class="card-link animate-fade-up-3 group flex flex-col bg-cream-card border border-nude/20 hover:border-nude/50 transition-all duration-500 hover:shadow-xl hover:shadow-nude/10 hover:-translate-y-1 relative">
+
+          <!-- Top accent -->
+          <div class="h-0.5 bg-nude/20 group-hover:bg-nude transition-colors duration-500 w-full"></div>
+
+          <div class="p-8 md:p-9 flex flex-col flex-1">
+
+            <!-- Tag + number -->
+            <div class="flex items-start justify-between mb-8">
+              <span class="tag-pill">
+                <span class="w-1.5 h-1.5 bg-current rounded-full inline-block"></span>
+                Propuesta 01
+              </span>
+            </div>
+
+            <!-- Icon area -->
+            <div class="mb-6">
+              <div class="w-10 h-10 border border-nude/30 flex items-center justify-center group-hover:bg-navy group-hover:border-navy transition-all duration-400">
+                <!-- Icon: Feather / editorial -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-nude group-hover:text-cream transition-colors duration-400" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/>
+                  <line x1="16" y1="8" x2="2" y2="22"/>
+                  <line x1="17.5" y1="15" x2="9" y2="15"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 mb-8">
+              <div class="font-sans text-[9px] uppercase tracking-[0.3em] text-navy/35 mb-2">Prototipo 1</div>
+              <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy leading-tight mb-4">
+                Enfoque<br>Editorial
+              </h2>
+              <p class="font-sans text-xs text-navy/55 font-light leading-relaxed">
+                Diseño minimalista y narrativo. Storytelling literario inspirado en García Márquez. Tipografía serif dominante, mucho espacio negativo y animaciones de scroll suaves.
+              </p>
+            </div>
+
+            <!-- Attributes -->
+            <div class="space-y-2 mb-8 pt-5 border-t border-nude/15">
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Storytelling & Narrativa
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Alto minimalismo visual
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Navbar con glassmorphism
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center justify-between">
+              <span class="font-sans text-[10px] font-semibold uppercase tracking-widest text-nude flex items-center gap-2">
+                Ver propuesta
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+
+          </div>
+
+          <div class="card-bar"></div>
+          <span class="proto-num">01</span>
+        </a>
+
+        <!-- ── CARD 2 ── Clinical Luxury ─────────────────────────────────── -->
+        <a href="./Prototipo-2/index.html"
+          class="card-link animate-fade-up-4 group flex flex-col bg-navy border border-navy hover:border-nude/60 transition-all duration-500 hover:shadow-2xl hover:shadow-navy/30 hover:-translate-y-1 relative">
+
+          <!-- Top accent -->
+          <div class="h-0.5 bg-nude transition-colors duration-500 w-full"></div>
+
+          <div class="p-8 md:p-9 flex flex-col flex-1">
+
+            <!-- Tag + badge -->
+            <div class="flex items-start justify-between mb-8">
+              <span class="inline-flex items-center gap-1.5 border border-nude/40 text-nude text-[9px] font-semibold uppercase tracking-[0.25em] px-2.5 py-1">
+                <span class="w-1.5 h-1.5 bg-nude rounded-full inline-block"></span>
+                Propuesta 02
+              </span>
+              <span class="bg-nude/15 text-nude font-sans text-[9px] uppercase tracking-wider px-2 py-1 font-semibold">
+                Recomendado
+              </span>
+            </div>
+
+            <!-- Icon area -->
+            <div class="mb-6">
+              <div class="w-10 h-10 border border-nude/30 flex items-center justify-center group-hover:bg-nude group-hover:border-nude transition-all duration-400">
+                <!-- Icon: Star / luxury -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-nude group-hover:text-navy transition-colors duration-400" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 mb-8">
+              <div class="font-sans text-[9px] uppercase tracking-[0.3em] text-cream/25 mb-2">Prototipo 2</div>
+              <h2 class="font-serif text-2xl md:text-3xl font-semibold text-cream leading-tight mb-4">
+                Clinical<br>Luxury
+              </h2>
+              <p class="font-sans text-xs text-cream/50 font-light leading-relaxed">
+                Hero full-screen inmersivo con overlay oscuro. Navbar píldora flotante estilo Apple. Alta conversión hacia el agendamiento con CTA prominentes.
+              </p>
+            </div>
+
+            <!-- Attributes -->
+            <div class="space-y-2 mb-8 pt-5 border-t border-white/8">
+              <div class="flex items-center gap-2 font-sans text-[10px] text-cream/40">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Hero 100vh inmersivo
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-cream/40">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Navbar pill flotante
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-cream/40">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Foco en alta conversión
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center justify-between">
+              <span class="font-sans text-[10px] font-semibold uppercase tracking-widest text-nude flex items-center gap-2">
+                Ver propuesta
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="#C4A882">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+
+          </div>
+
+          <div class="card-bar"></div>
+          <span class="proto-num" style="color:rgba(253,246,238,0.05)">02</span>
+        </a>
+
+        <!-- ── CARD 3 ── Institucional ──────────────────────────────────── -->
+        <a href="./Prototipo-3/index.html"
+          class="card-link animate-fade-up-5 group flex flex-col bg-cream-card border border-nude/20 hover:border-nude/50 transition-all duration-500 hover:shadow-xl hover:shadow-nude/10 hover:-translate-y-1 relative">
+
+          <!-- Top accent -->
+          <div class="h-0.5 bg-nude/20 group-hover:bg-nude transition-colors duration-500 w-full"></div>
+
+          <div class="p-8 md:p-9 flex flex-col flex-1">
+
+            <!-- Tag -->
+            <div class="flex items-start justify-between mb-8">
+              <span class="tag-pill">
+                <span class="w-1.5 h-1.5 bg-current rounded-full inline-block"></span>
+                Propuesta 03
+              </span>
+            </div>
+
+            <!-- Icon area -->
+            <div class="mb-6">
+              <div class="w-10 h-10 border border-nude/30 flex items-center justify-center group-hover:bg-navy group-hover:border-navy transition-all duration-400">
+                <!-- Icon: Shield / institutional -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-nude group-hover:text-cream transition-colors duration-400" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 mb-8">
+              <div class="font-sans text-[9px] uppercase tracking-[0.3em] text-navy/35 mb-2">Prototipo 3</div>
+              <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy leading-tight mb-4">
+                Médico<br>Institucional
+              </h2>
+              <p class="font-sans text-xs text-navy/55 font-light leading-relaxed">
+                Máxima autoridad clínica y confianza médica. Layout simétrico con perfil del Dr. Cuervo Parra, credenciales RETHUS, protocolos de tratamiento y formulario de valoración.
+              </p>
+            </div>
+
+            <!-- Attributes -->
+            <div class="space-y-2 mb-8 pt-5 border-t border-nude/15">
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Autoridad médica visual
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Logo SVG real de la marca
+              </div>
+              <div class="flex items-center gap-2 font-sans text-[10px] text-navy/50">
+                <div class="w-1 h-1 bg-nude rounded-full shrink-0"></div> Layout simétrico y limpio
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex items-center justify-between">
+              <span class="font-sans text-[10px] font-semibold uppercase tracking-widest text-nude flex items-center gap-2">
+                Ver propuesta
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+
+          </div>
+
+          <div class="card-bar"></div>
+          <span class="proto-num">03</span>
+        </a>
+
+      </div>
+
+      <!-- ─── NOTA DE AGENCIA ─────────────────────────────────────────────── -->
+      <div class="animate-fade-up-5 mt-16 border-t border-nude/15 pt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="font-sans text-[9px] uppercase tracking-[0.28em] text-nude/70 mb-2">Tecnología</div>
+          <div class="font-serif text-sm text-navy/60">React + Vite + Tailwind CSS</div>
+        </div>
+        <div>
+          <div class="font-sans text-[9px] uppercase tracking-[0.28em] text-nude/70 mb-2">Tipografías</div>
+          <div class="font-serif text-sm text-navy/60">Cormorant Garamond + Inter</div>
+        </div>
+        <div>
+          <div class="font-sans text-[9px] uppercase tracking-[0.28em] text-nude/70 mb-2">Paleta de color</div>
+          <div class="flex items-center justify-center gap-2 mt-1">
+            <div class="w-4 h-4 rounded-full border border-nude/30" style="background:#FDF6EE"></div>
+            <div class="w-4 h-4 rounded-full" style="background:#C4A882"></div>
+            <div class="w-4 h-4 rounded-full" style="background:#1A1A2E"></div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ─── FOOTER ────────────────────────────────────────────────────────── -->
+    <footer class="border-t border-nude/15 py-6 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2 watermark">
+          <div class="w-4 h-4 border border-nude/40 flex items-center justify-center">
+            <span class="font-serif text-[8px] text-navy">SM</span>
+          </div>
+          <span class="font-sans text-[9px] uppercase tracking-[0.28em] text-navy/40">
+            Sierva María Estética
+          </span>
+        </div>
+        <span class="font-sans text-[9px] uppercase tracking-[0.25em] text-navy/25">
+          Documento de presentación interna · 2026
+        </span>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
