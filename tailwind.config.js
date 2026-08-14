@@ -1,29 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'nude-primary': '#C4A882',
-        'nude-hover': '#b3956e',
-        'nude-light': '#F4EBE1',
-        'cream-bg': '#FDF6EE',
-        'cream-card': '#FAF1E6',
-        'navy-text': '#1A1A2E',
-        'navy-muted': '#2D2D44',
-        'aurea-gold': '#B8963E',
-        'aurea-gold-light': '#D4B258',
-        'aurea-navy': '#0D0D1E',
-        'aurea-white': '#FAFAFA',
+        cream: '#FDF6EE',
+        nude: '#C4A882',
+        navy: '#1A1A2E',
+        'nude-dark': '#b3956e',
+        'cream-card': '#F7EEE3',
       },
       fontFamily: {
         serif: ['"Playfair Display"', '"Cormorant Garamond"', 'Georgia', 'serif'],
-        editorial: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'Montserrat', 'sans-serif'],
-      }
+        sans: ['"Inter"', '"Montserrat"', 'sans-serif'],
+      },
+      letterSpacing: {
+        'widest-xl': '0.35em',
+      },
     },
   },
   plugins: [],
