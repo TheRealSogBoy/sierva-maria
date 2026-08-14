@@ -730,15 +730,13 @@ function HomePage({ onNavigate }) {
 // ══════════════════════════════════════════════════════════════════════════════
 // VISTA 2: PÁGINA DE ARMONIZACIÓN FACIAL E INYECTABLES (/armonizacion)
 // ══════════════════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════════════════
+// VISTA 2: PÁGINA DE ARMONIZACIÓN FACIAL E INYECTABLES (/armonizacion)
+// ══════════════════════════════════════════════════════════════════════════════
 function ArmonizacionPage({ onNavigate }) {
-  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
-      {/* Hero Banner Navy */}
       <section className="bg-[#1A1A2E] text-[#FDF6EE] py-20 md:py-28 px-6 lg:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-          <SiervaLogo size={500} />
-        </div>
         <div className="max-w-6xl mx-auto relative z-10 text-center space-y-6">
           <div className="inline-flex items-center gap-3 bg-[#C4A882]/10 border border-[#C4A882]/30 px-4 py-1.5 rounded-full">
             <Sparkles size={14} className="text-[#C4A882]" />
@@ -746,701 +744,320 @@ function ArmonizacionPage({ onNavigate }) {
               Medicina Estética & Rigor Clínico
             </span>
           </div>
-
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-semibold text-[#FDF6EE] text-balance">
             Armonización Facial<br />
             <em className="font-normal italic text-[#C4A882]">e Inyectables</em>
           </h1>
-
           <p className="font-sans text-base md:text-lg text-[#FDF6EE]/80 font-light max-w-3xl mx-auto leading-relaxed">
             Procedimientos médicos de alta precisión con Bótox, Ácido Hialurónico y Bioestimuladores de colágeno. Diseñados para restaurar estructura, devolver juventud y resaltar tu belleza natural sin transformar tus rasgos.
           </p>
+        </div>
+      </section>
 
-          <div className="pt-4 flex flex-wrap justify-center gap-4 text-xs font-sans">
-            <a
-              href="https://wa.me/573100000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#C4A882] text-[#1A1A2E] font-bold uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-white transition-all shadow-xl"
-            >
-              Agendar Valoración Gratuita
-            </a>
-            <a
-              href="#combos"
-              className="border border-[#C4A882] text-[#C4A882] font-semibold uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-[#C4A882] hover:text-[#1A1A2E] transition-all"
-            >
-              Ver Combos Promocionales
-            </a>
+      {/* A. Limpiezas y Cuidados Básicos */}
+      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="font-serif text-4xl font-semibold text-[#1A1A2E]">A. Limpiezas y Cuidados Básicos</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors">
+              <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Limpieza Facial Basic</h3>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">$50.000</div>
+            </div>
+            <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors relative">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C4A882] text-[#1A1A2E] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">Recomendado</span>
+              <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Limpieza Facial Premium</h3>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">$100.000</div>
+            </div>
+            <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors">
+              <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Plasma Facial (Solo)</h3>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">$200.000</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contenido Informativo + Tarifario */}
-      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12 space-y-24 max-w-7xl mx-auto">
-
-        {/* 1. TOXINA BOTULÍNICA (BÓTOX) */}
-        <Reveal>
-          <div className="space-y-8">
-            <div className="border-b border-[#C4A882]/30 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882] block mb-2">
-                  01. Neuromoduladores
-                </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#1A1A2E]">
-                  Toxina Botulínica (Bótox®)
-                </h2>
-              </div>
-              <div className="font-sans text-xs text-[#1A1A2E]/60 max-w-md font-light">
-                Relajación muscular selectiva para prevenir y suavizar arrugas dinámicas de expresión sin perder gestualidad natural.
-              </div>
-            </div>
-
-            {/* Brands Authorized */}
-            <div className="bg-[#F7EEE3] border border-[#C4A882]/30 p-4 rounded-2xl flex flex-wrap items-center gap-4 text-xs font-sans">
-              <span className="font-bold text-[#C4A882] uppercase tracking-wider flex items-center gap-1.5">
-                <BadgeCheck size={16} /> Marcas Autorizadas:
-              </span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Botox® (Allergan)</span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Dysport®</span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Xeomin®</span>
-            </div>
-
-            {/* Table Tailwind */}
-            <div className="overflow-x-auto bg-white rounded-3xl border border-[#C4A882]/20 shadow-sm">
-              <table className="w-full text-left border-collapse font-sans text-sm">
-                <thead>
-                  <tr className="bg-[#1A1A2E] text-[#FDF6EE] text-xs uppercase tracking-wider">
-                    <th className="py-4 px-6 font-semibold">Procedimiento / Zona</th>
-                    <th className="py-4 px-6 font-semibold">Detalles Técnicos & Alcance</th>
-                    <th className="py-4 px-6 font-semibold text-right">Tarifa (COP)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#C4A882]/15 text-[#1A1A2E]">
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      1 Zona Específica
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(Frente, Entrecejo o Patas de Gallo)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Aplicación localizada por zona muscular. Marcación de prevención de arrugas dinámicas.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('TOX-001', '$350.000 – $400.000')}
-                    </td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Tercio Superior Completo
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(Full Face Superior: Frente + Entrecejo + Patas de Gallo)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Ajuste completo de expresión sin perder naturalidad. Incluye cita de control y retoque a los 12-15 días.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('TOX-002', '$650.000 – $750.000')}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Bótox Nefertiti / Cuello
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(Nefertiti Lift & Bandas Platismales)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Definición del óvalo facial y relajación de bandas platismales del cuello.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('TOX-003', '$550.000 – $650.000')}
-                    </td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Bótox Maseteros
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(Bruxismo / Perfilamiento Facial Inferior)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Tratamiento funcional para bruxismo y afinamiento del tercio inferior del rostro.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('TOX-004', '$500.000 – $700.000')}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Bótox Hiperhidrosis
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(Axilar o Palmar)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Bloqueo de sudoración excesiva en axilas o palmas de las manos. Duración 6-9 meses.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('TOX-005', '$900.000 – $1.200.000')}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      {/* B. Procedimientos Individuales */}
+      <section className="bg-[#FDF6EE] py-10 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="font-serif text-4xl font-semibold text-[#1A1A2E]">B. Procedimientos Individuales (Base)</h2>
           </div>
-        </Reveal>
-
-        {/* 2. ÁCIDO HIALURÓNICO */}
-        <Reveal>
-          <div className="space-y-8">
-            <div className="border-b border-[#C4A882]/30 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882] block mb-2">
-                  02. Rellenos & Perfilamiento
-                </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#1A1A2E]">
-                  Ácido Hialurónico
-                </h2>
-              </div>
-              <div className="font-sans text-xs text-[#1A1A2E]/60 max-w-md font-light">
-                Aporta soporte estructural, volumen donde se ha perdido e hidratación profunda con resultados inmediatos.
-              </div>
-            </div>
-
-            {/* Brands Authorized */}
-            <div className="bg-[#F7EEE3] border border-[#C4A882]/30 p-4 rounded-2xl flex flex-wrap items-center gap-4 text-xs font-sans">
-              <span className="font-bold text-[#C4A882] uppercase tracking-wider flex items-center gap-1.5">
-                <BadgeCheck size={16} /> Marcas de Referencia:
-              </span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Juvederm® (Volift, Voluma, Volbella)</span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Restylane®</span>
-              <span className="text-[#1A1A2E]/80 bg-white/70 px-3 py-1 rounded-md font-medium">Teosyal®</span>
-            </div>
-
-            {/* Table Tailwind */}
-            <div className="overflow-x-auto bg-white rounded-3xl border border-[#C4A882]/20 shadow-sm">
-              <table className="w-full text-left border-collapse font-sans text-sm">
-                <thead>
-                  <tr className="bg-[#1A1A2E] text-[#FDF6EE] text-xs uppercase tracking-wider">
-                    <th className="py-4 px-6 font-semibold">Procedimiento / Zona</th>
-                    <th className="py-4 px-6 font-semibold">Detalles Técnicos</th>
-                    <th className="py-4 px-6 font-semibold text-right">Tarifa (COP)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#C4A882]/15 text-[#1A1A2E]">
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Hidratación & Relleno de Labios
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Jeringa)</div>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#C4A882]/30">
+            <table className="w-full text-left border-collapse">
+              <tbody>
+                {[
+                  { name: 'Bótox Full Face (50 Unidades)', price: '$700.000' },
+                  { name: 'Rinoremodelación', desc: 'Según valoración', price: '$700.000 - $900.000' },
+                  { name: 'Hidratación de labios', price: '$350.000 - $450.000' },
+                  { name: 'Definición de labios', price: '$500.000 - $600.000' },
+                  { name: 'Perfilación de labios', price: '$700.000 - $900.000' },
+                ].map((item, i) => (
+                  <tr key={i} className="border-b border-[#C4A882]/10 hover:bg-[#FDF6EE]/50 transition-colors">
+                    <td className="py-5 px-8 font-semibold text-[#1A1A2E]">
+                      {item.name}
+                      {item.desc && <div className="text-xs font-normal text-[#1A1A2E]/60 mt-1">({item.desc})</div>}
                     </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Técnica de eversión, perfilado de borde labial e hidratación profunda con volumen natural.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-001', '$650.000 – $800.000')}
+                    <td className="py-5 px-8 font-bold text-[#C4A882] text-right whitespace-nowrap text-lg">
+                      {item.price}
                     </td>
                   </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Relleno de Ojeras
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Fosa Lacrimal)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Corrección de hundimiento de fosa lacrimal mediante cánula médica de alta precisión.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-002', '$750.000 – $850.000')}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Rinomodelación
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Corrección Nasal)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Levantamiento de punta nasal y rectificación de giba o dorso. Resultado inmediato sin cirugía.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-003', '$700.000 – $850.000')}
-                    </td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Proyección de Mentón
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Perfilamiento)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Proyección estructural del tercio inferior para lograr simetría de perfil.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-004', '$650.000 – $750.000')}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Definición de Pómulos / Arco Cigomático
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Soporte Facial)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Reposicionamiento de tercios faciales y soporte estructural medio.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-005', '$650.000 – $750.000')}
-                    </td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">
-                      Marcaje Mandibular
-                      <div className="text-xs font-normal text-[#1A1A2E]/60">(1 ml / Ángulo Mandibular)</div>
-                    </td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Definición de bordes y ángulos mandibulares para masculinización o perfilado femenino.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      {getPrice('HA-006', '$650.000 – $750.000')}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </Reveal>
-
-        {/* 3. BIOESTIMULADORES DE COLÁGENO Y TRATAMIENTOS COMPLEMENTARIOS */}
-        <Reveal>
-          <div className="space-y-8">
-            <div className="border-b border-[#C4A882]/30 pb-6">
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882] block mb-2">
-                03. Firmeza & Calidad de Piel
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#1A1A2E]">
-                Bioestimuladores de Colágeno & Tratamientos Faciales
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: 'Radiesse®',
-                  desc: 'Inducción de colágeno tipo I y III (Hidroxiapatita Cálcica). Tensa la piel, combate flacidez y recupera densidad.',
-                  price: getPrice('BIO-001', '$1.200.000 – $1.400.000'),
-                  badge: '1 Vial'
-                },
-                {
-                  title: 'Sculptra®',
-                  desc: 'Bioestimulador neocollagenéico progresivo (Ácido Poli-L-Láctico). Ideal para pérdida de volumen severa y firmeza.',
-                  price: getPrice('BIO-002', '$1.500.000 – $1.800.000'),
-                  badge: '1 Vial'
-                },
-                {
-                  title: 'HarmonyCa®',
-                  desc: 'Efecto lifting inmediato por ácido hialurónico + estimulación sostenida por hidroxiapatita cálcica.',
-                  price: getPrice('BIO-003', '$1.600.000 – $1.900.000'),
-                  badge: '1 Vial Híbrido'
-                },
-                {
-                  title: 'Profhilo®',
-                  desc: 'Ácido hialurónico ultrapuro de alta concentración. Bioremodelación celular sin aportar volumen.',
-                  price: getPrice('BIO-004', '$1.100.000 – $1.300.000'),
-                  badge: '2 ml Bioremodelador'
-                },
-                {
-                  title: 'Dermapen + NCTF 135HA',
-                  desc: 'Microneedling médico con cóctel de polirevitalización Filorga/NCTF para luminosidad y poros.',
-                  price: getPrice('BIO-005', '$250.000 – $350.000'),
-                  badge: 'Cóctel Activo'
-                },
-                {
-                  title: 'Lipopapa Enzimática',
-                  desc: 'Enzimas recombinantes PBSerum (Lipasa, Colagenasa, Hialuronidasa) para reducción de grasa submentoniana.',
-                  price: getPrice('BIO-006', '$180.000 – $250.000 / sesión'),
-                  badge: 'Pack 3: $450k – $600k'
-                },
-                {
-                  title: 'Hilos Tensores / Espiculados',
-                  desc: 'Tracción y lifting mecánico no quirúrgico para definición de mejillas y tercio inferior.',
-                  price: getPrice('BIO-007', '$150.000 – $200.000 / hilo'),
-                  badge: 'Lifting Mecánico'
-                },
-                {
-                  title: 'HydraFacial / Peeling Médico',
-                  desc: 'Microdermoabrasión con sueros médicos o renovación celular profunda con ácidos estéticos.',
-                  price: getPrice('BIO-008', '$200.000 – $280.000'),
-                  badge: 'Renovación Celular'
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-2xl border border-[#C4A882]/25 shadow-sm flex flex-col justify-between space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-serif text-xl font-semibold text-[#1A1A2E]">{item.title}</h3>
-                      <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-[#C4A882] bg-[#F7EEE3] px-2.5 py-1 rounded-full">
-                        {item.badge}
-                      </span>
-                    </div>
-                    <p className="font-sans text-xs text-[#1A1A2E]/70 font-light leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-[#C4A882]/15 flex items-center justify-between">
-                    <span className="font-sans text-xs text-[#1A1A2E]/50 uppercase tracking-wider">Tarifa Estimada</span>
-                    <span className="font-sans text-sm font-bold text-[#C4A882]">{item.price}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        {/* 4. COMBOS PROMOCIONALES (TABLA AZUL / HIGH CONVERSION) */}
-        <Reveal>
-          <div id="combos" className="bg-[#1A1A2E] text-[#FDF6EE] rounded-3xl p-8 sm:p-12 lg:p-16 space-y-10 border border-white/10 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-              <SiervaLogo size={400} />
-            </div>
-
-            <div className="text-center max-w-3xl mx-auto space-y-4 relative z-10">
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[#C4A882] border border-[#C4A882]/30 px-4 py-1.5 rounded-full">
-                Menú de Alta Conversión
-              </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-semibold text-[#FDF6EE]">
-                Combos Premium & Paquetes de Armonización
-              </h2>
-              <p className="font-sans text-sm text-[#FDF6EE]/75 font-light">
-                Tratamientos combinados para un resultado integral con descuento exclusivo por paquete.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-              {[
-                {
-                  name: 'Combo Glow Facial',
-                  price: getPrice('CMB-001', '$320.000 COP'),
-                  includes: [
-                    'Limpieza Facial Profunda',
-                    'Dermapen con NCTF 135HA (Polirevitalización)',
-                    'Peeling Médico Renovador'
-                  ],
-                  highlight: 'Ideal para eventos o revitalización rápida'
-                },
-                {
-                  name: 'Combo Rejuvenecimiento Tercio Superior',
-                  price: getPrice('CMB-002', '$1.250.000 – $1.400.000 COP'),
-                  includes: [
-                    'Toxina Botulínica Tercio Superior Completo (Frente + Entrecejo + Patas de Gallo)',
-                    '1 ml Ácido Hialurónico (Labios u Ojeras)'
-                  ],
-                  highlight: 'Rejuvenecimiento expresivo completo'
-                },
-                {
-                  name: 'Combo Perfilamiento Facial',
-                  price: getPrice('CMB-003', '$1.300.000 COP'),
-                  includes: [
-                    'Rinomodelación con Ácido Hialurónico',
-                    'Proyección Estructural de Mentón (1 ml)'
-                  ],
-                  highlight: 'Estructuración del perfil y simetría'
-                },
-                {
-                  name: 'Combo Armonización Full Face',
-                  price: getPrice('CMB-004', '$2.400.000 – $2.800.000 COP'),
-                  includes: [
-                    'Bótox Tercio Superior Completo',
-                    '3 ml Ácido Hialurónico a distribuir (Labios, Mentón, Pómulos)'
-                  ],
-                  highlight: 'Transformación armónica integral'
-                },
-              ].map((combo, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white/5 border border-[#C4A882]/40 rounded-2xl p-8 flex flex-col justify-between space-y-6 hover:border-[#C4A882] transition-colors"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h3 className="font-serif text-2xl font-semibold text-[#FDF6EE]">{combo.name}</h3>
-                        <span className="font-sans text-[10px] text-[#C4A882] font-semibold uppercase tracking-wider">
-                          {combo.highlight}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="font-serif text-2xl font-bold text-[#C4A882]">
-                      {combo.price}
-                    </div>
-
-                    <ul className="space-y-2.5 font-sans text-xs text-[#FDF6EE]/80 font-light border-t border-white/10 pt-4">
-                      {combo.includes.map((inc, i) => (
-                        <li key={i} className="flex items-center gap-2.5">
-                          <CheckCircle2 size={15} className="text-[#C4A882] shrink-0" />
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <a
-                    href="https://wa.me/573100000000"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-3 bg-[#C4A882] text-[#1A1A2E] font-sans text-xs font-bold uppercase tracking-widest py-3.5 px-6 rounded-full hover:bg-white transition-all shadow-lg"
-                  >
-                    Agendar Combo
-                    <ArrowRight size={14} />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
+        </div>
       </section>
 
-      <Footer onNavigate={onNavigate} />
+      {/* C. Combos Premium */}
+      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12 border-t border-[#C4A882]/20 mt-10">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[#C4A882] border border-[#C4A882]/30 px-4 py-1.5 rounded-full">
+              Precios Actualizados
+            </span>
+            <h2 className="font-serif text-4xl sm:text-5xl font-semibold text-[#1A1A2E]">C. Combos Premium</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4 pl-4 border-l-4 border-[#C4A882]">Combos Básicos</h3>
+              {[
+                { name: 'Plasma + Limpieza Premium', price: '$270.000' },
+                { name: 'NCTF + Plasma', price: '$350.000' },
+                { name: 'NCTF + Plasma + Bótox (50U)', price: '$850.000' },
+              ].map((c, i) => (
+                <div key={i} className="bg-white border border-[#C4A882]/30 p-6 rounded-2xl flex justify-between items-center shadow-md">
+                  <div className="font-semibold text-[#1A1A2E] text-lg">{c.name}</div>
+                  <div className="font-bold text-[#C4A882] text-xl">{c.price}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4 pl-4 border-l-4 border-[#C4A882]">Combos Full Face</h3>
+              {[
+                { name: 'Full Face 1ml AH + Bótox + Plasma', price: '$1.400.000' },
+                { name: 'Full Face 2ml AH + Bótox + Plasma', price: '$1.300.000' },
+                { name: 'Full Face 3ml AH + Bótox + Plasma', price: '$2.800.000' },
+              ].map((c, i) => (
+                <div key={i} className="bg-white border border-[#C4A882]/30 p-6 rounded-2xl flex justify-between items-center shadow-md">
+                  <div className="font-semibold text-[#1A1A2E] text-lg">{c.name}</div>
+                  <div className="font-bold text-[#C4A882] text-xl">{c.price}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                title: 'Combos con Profhilo',
+                items: [
+                  { name: 'Profhilo + Bótox (50U)', price: '$2.300.000' },
+                  { name: 'Profhilo + Bótox + Ácido Hialurónico (1ml)', price: '$2.800.000' }
+                ]
+              },
+              {
+                title: 'Combos con Sculptra',
+                items: [
+                  { name: 'Sculptra + Bótox (50U)', price: '$2.700.000' },
+                  { name: 'Sculptra + Bótox + Ácido Hialurónico (1ml)', price: '$3.200.000' }
+                ]
+              },
+              {
+                title: 'Combos con Harmonyca',
+                items: [
+                  { name: 'Harmonyca + Bótox (50U)', price: '$3.000.000' },
+                  { name: 'Harmonyca + Bótox + Ácido Hialurónico (1ml)', price: '$3.500.000' }
+                ]
+              }
+            ].map((group, i) => (
+              <div key={i} className="bg-[#1A1A2E] border border-[#C4A882]/30 p-8 rounded-3xl space-y-6 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10"><Sparkles size={60} /></div>
+                <h3 className="font-sans text-xl font-bold text-[#FDF6EE] text-center border-b border-white/10 pb-4">{group.title}</h3>
+                <div className="space-y-6">
+                  {group.items.map((item, j) => (
+                    <div key={j} className="flex flex-col gap-2">
+                      <div className="text-sm text-[#FDF6EE]/90 leading-tight">{item.name}</div>
+                      <div className="font-serif text-2xl font-bold text-[#C4A882]">{item.price}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center pt-8">
+            <a
+              href="https://wa.me/573100000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#C4A882] text-[#1A1A2E] font-sans text-sm font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-[#1A1A2E] hover:text-[#C4A882] transition-colors shadow-2xl"
+            >
+              Agendar Combo Premium
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
+
+
 
 // ══════════════════════════════════════════════════════════════════════════════
 // VISTA 3: PÁGINA DE DEPILACIÓN LÁSER AVANZADA (/laser)
 // ══════════════════════════════════════════════════════════════════════════════
 function LaserPage({ onNavigate }) {
-  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
-      {/* Hero Banner Navy */}
       <section className="bg-[#1A1A2E] text-[#FDF6EE] py-20 md:py-28 px-6 lg:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-          <SiervaLogo size={500} />
-        </div>
         <div className="max-w-6xl mx-auto relative z-10 text-center space-y-6">
           <div className="inline-flex items-center gap-3 bg-[#C4A882]/10 border border-[#C4A882]/30 px-4 py-1.5 rounded-full">
-            <Zap size={14} className="text-[#C4A882]" />
+            <Sparkles size={14} className="text-[#C4A882]" />
             <span className="font-sans text-[10px] font-bold uppercase tracking-[0.25em] text-[#C4A882]">
-              Tecnología Médica de Precisión
+              Tecnología Láser Avanzada
             </span>
           </div>
-
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-semibold text-[#FDF6EE] text-balance">
-            Depilación Láser Definitiva<br />
-            <em className="font-normal italic text-[#C4A882]">Tecnología NewAge Fenix EV 2025N</em>
+            Depilación Láser<br />
+            <em className="font-normal italic text-[#C4A882]">Definitiva</em>
           </h1>
-
           <p className="font-sans text-base md:text-lg text-[#FDF6EE]/80 font-light max-w-3xl mx-auto leading-relaxed">
-            Eliminación progresiva e indolora del vello facial y corporal. Sistema de diodo de alta potencia apto para todos los fototipos de piel con máxima protección cutánea.
+            Eliminación progresiva y definitiva del vello con tecnología de última generación. Protocolos seguros, rápidos y altamente efectivos para todo tipo de piel.
           </p>
+        </div>
+      </section>
 
-          <div className="pt-4 flex flex-wrap justify-center gap-4 text-xs font-sans">
-            <a
-              href="https://wa.me/573100000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#C4A882] text-[#1A1A2E] font-bold uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-white transition-all shadow-xl"
-            >
-              Agendar Valoración Láser
-            </a>
-            <a
-              href="#paquetes-laser"
-              className="border border-[#C4A882] text-[#C4A882] font-semibold uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-[#C4A882] hover:text-[#1A1A2E] transition-all"
-            >
-              Ver Paquetes de 6 Sesiones
-            </a>
+      {/* A. Precios por Zona (Sesiones Individuales) */}
+      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[#1A1A2E] border border-[#1A1A2E]/30 px-4 py-1.5 rounded-full bg-white">
+              Todos los paquetes incluyen rasuración GRATIS
+            </span>
+            <h2 className="font-serif text-4xl font-semibold text-[#1A1A2E] mt-6">A. Precios por Zona (Sesiones Individuales)</h2>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-[#C4A882]/30">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+              {[
+                { z: 'Rostro Completo', d: 'Frente, patilla, mentón, pómulos y bozo', p: '$630.000' },
+                { z: 'Barbilla', p: '$550.000' },
+                { z: 'Cuello', p: '$500.000' },
+                { z: 'Hombros', p: '$650.000' },
+                { z: 'Axilas', p: '$230.000' },
+                { z: 'Pechos / Areola', p: '$700.000' },
+                { z: 'Abdomen (Línea Alba)', p: '$330.000' },
+                { z: 'Espalda', d: 'Alta ($450.000) / Baja ($450.000)', p: '$450.000' },
+                { z: 'Brazos Completos', d: 'Por separado: Antebrazos $380k, Manos $380k', p: '$690.000' },
+                { z: 'Pelvis', d: 'Bikini ($500.000) / Línea Perianal ($600.000)', p: 'Según zona' },
+                { z: 'Glúteos', p: '$560.000' },
+                { z: 'Piernas Completas', d: 'Por separado: Pierna $450k, Muslo $450k', p: '$780.000' },
+                { z: 'Pies (Deditos)', p: '$320.000' },
+              ].map((item, i) => (
+                <div key={i} className="flex justify-between items-center border-b border-[#C4A882]/20 pb-4 py-2 hover:bg-[#FDF6EE]/50 transition-colors px-2 rounded-lg">
+                  <div>
+                    <div className="font-semibold text-[#1A1A2E] text-base">{item.z}</div>
+                    {item.d && <div className="text-xs text-[#1A1A2E]/60 mt-1">{item.d}</div>}
+                  </div>
+                  <div className="font-bold text-[#C4A882] text-right text-lg">{item.p}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12 space-y-24 max-w-7xl mx-auto">
-
-        {/* TRUST BUILDING: FICHA TÉCNICA DEL EQUIPO FENIX EV 2025N */}
-        <Reveal>
-          <div className="bg-[#F7EEE3] border border-[#C4A882]/30 rounded-3xl p-8 sm:p-12 space-y-8">
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882]">
-                Autoridad en Tecnología Médica
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#1A1A2E]">
-                Equipo de Alta Gama: NewAge Fenix EV 2025N
-              </h2>
-              <p className="font-sans text-xs text-[#1A1A2E]/70 font-light">
-                Plataforma médica de láser de diodo de última generación diseñada para la máxima comodidad del paciente.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-sans">
-              <div className="bg-white p-6 rounded-2xl border border-[#C4A882]/20 space-y-3 shadow-sm">
-                <div className="w-10 h-10 bg-[#1A1A2E] text-[#C4A882] rounded-xl flex items-center justify-center">
-                  <ShieldCheck size={20} />
-                </div>
-                <h3 className="font-semibold text-sm text-[#1A1A2E]">Tecnología Indolora</h3>
-                <p className="text-xs text-[#1A1A2E]/70 font-light leading-relaxed">
-                  Sistema Sapphire Chill Technology que enfrió la piel por contacto durante el pulso anestesiando la zona.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-2xl border border-[#C4A882]/20 space-y-3 shadow-sm">
-                <div className="w-10 h-10 bg-[#1A1A2E] text-[#C4A882] rounded-xl flex items-center justify-center">
-                  <Clock size={20} />
-                </div>
-                <h3 className="font-semibold text-sm text-[#1A1A2E]">Sesiones Ultra Rápidas</h3>
-                <p className="text-xs text-[#1A1A2E]/70 font-light leading-relaxed">
-                  Disparo de alta frecuencia (Modo In-Motion) que reduce los tiempos de sesión a minutos.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-2xl border border-[#C4A882]/20 space-y-3 shadow-sm">
-                <div className="w-10 h-10 bg-[#1A1A2E] text-[#C4A882] rounded-xl flex items-center justify-center">
-                  <UserCheck size={20} />
-                </div>
-                <h3 className="font-semibold text-sm text-[#1A1A2E]">Todo Fototipo de Piel</h3>
-                <p className="text-xs text-[#1A1A2E]/70 font-light leading-relaxed">
-                  Eficaz e inofensivo en pieles claras, morenas o bronceadas (Fototipos I a VI).
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-2xl border border-[#C4A882]/20 space-y-3 shadow-sm">
-                <div className="w-10 h-10 bg-[#1A1A2E] text-[#C4A882] rounded-xl flex items-center justify-center">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h3 className="font-semibold text-sm text-[#1A1A2E]">Rasuración Gratis</h3>
-                <p className="text-xs text-[#1A1A2E]/70 font-light leading-relaxed">
-                  Todas tus sesiones incluyen la preparación y rasuración clínica en cabina sin costo adicional.
-                </p>
-              </div>
-            </div>
+      {/* B. PAQUETES DE 6 SESIONES (Alta Conversión) */}
+      <section className="bg-[#1A1A2E] py-20 px-6 lg:px-12 text-[#FDF6EE]">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="font-serif text-4xl sm:text-5xl font-semibold text-[#FDF6EE]">B. Paquetes de 6 Sesiones</h2>
+            <p className="font-sans text-[#C4A882] font-semibold tracking-widest uppercase text-sm">Alta Conversión</p>
           </div>
-        </Reveal>
 
-        {/* TARIFARIO POR ZONAS (INDIVIDUAL & PAQUETES DE 6 SESIONES) */}
-        <Reveal>
-          <div className="space-y-8">
-            <div className="border-b border-[#C4A882]/30 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div>
-                <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882] block mb-2">
-                  Tarifario Transparente
-                </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#1A1A2E]">
-                  Precios por Zonas Corporales
-                </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-3 bg-gradient-to-r from-[#C4A882] to-[#E5D3B8] text-[#1A1A2E] rounded-3xl p-8 lg:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 transform hover:scale-[1.02] transition-transform relative overflow-hidden">
+              <div className="absolute -right-10 -top-10 opacity-20 pointer-events-none">
+                <Sparkles size={200} />
               </div>
-              <div className="font-sans text-xs text-[#1A1A2E]/60 max-w-md font-light">
-                Puedes pagar sesión a sesión o adquirir tu paquete de 6 sesiones con descuento garantizado.
-              </div>
-            </div>
-
-            <div className="overflow-x-auto bg-white rounded-3xl border border-[#C4A882]/20 shadow-sm">
-              <table className="w-full text-left border-collapse font-sans text-sm">
-                <thead>
-                  <tr className="bg-[#1A1A2E] text-[#FDF6EE] text-xs uppercase tracking-wider">
-                    <th className="py-4 px-6 font-semibold">Categoría de Zona</th>
-                    <th className="py-4 px-6 font-semibold">Zonas Incluidas</th>
-                    <th className="py-4 px-6 font-semibold">Sesión Individual</th>
-                    <th className="py-4 px-6 font-semibold text-right">Paquete (6 Sesiones)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#C4A882]/15 text-[#1A1A2E]">
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">Zona Pequeña</td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Axilas, Bozo, Mentón, Patillas, Línea de Alba o Patillas.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-001', '$40.000 – $60.000')}</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-002', '$200.000 – $280.000')}</td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">Zona Mediana</td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Bikini Parcial, Media Pierna, Brazos Completos o Rostro Completo.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-003', '$70.000 – $100.000')}</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-004', '$350.000 – $450.000')}</td>
-                  </tr>
-                  <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">Zona Grande</td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Piernas Completas, Bikini Completo + Espalda o Pecho.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-005', '$120.000 – $160.000')}</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-006', '$600.000 – $750.000')}</td>
-                  </tr>
-                  <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
-                    <td className="py-4 px-6 font-semibold">Cuerpo Completo (Full Body)</td>
-                    <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
-                      Combinación de 3 o más zonas corporales completas.
-                    </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-007', '$250.000 – $350.000')}</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-008', '$1.200.000 – $1.500.000')}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* PAQUETES DESTACADOS & SUPER COMBO PLUS */}
-        <Reveal>
-          <div id="paquetes-laser" className="space-y-12">
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-[#C4A882]">
-                Oportunidades Especiales
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#1A1A2E]">
-                Paquetes de Alta Conversión
-              </h2>
-            </div>
-
-            {/* SUPER COMBO PLUS DESTACADO */}
-            <div className="bg-[#1A1A2E] text-[#FDF6EE] rounded-3xl p-8 sm:p-12 border-2 border-[#C4A882] shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="space-y-4 max-w-2xl">
-                <span className="font-sans text-[10px] font-bold uppercase tracking-[0.25em] bg-[#C4A882] text-[#1A1A2E] px-3.5 py-1 rounded-full inline-block">
-                  ★ Combo Más Popular (Super Combo Plus)
-                </span>
-                <h3 className="font-serif text-3xl sm:text-4xl font-semibold text-[#FDF6EE]">
-                  Paquete Full Body (6 Sesiones)
-                </h3>
-                <p className="font-sans text-sm text-[#FDF6EE]/80 font-light leading-relaxed">
-                  Eliminación integral del vello en 3 o más zonas corporales completas durante 6 sesiones programadas. Incluye valoración clínica, rasuración previa gratis y bono regalo para armonización facial.
-                </p>
-                <div className="flex flex-wrap gap-4 text-xs font-sans text-[#C4A882]">
-                  <div className="flex items-center gap-1.5"><CheckCircle2 size={15} /> 6 Sesiones Garantizadas</div>
-                  <div className="flex items-center gap-1.5"><CheckCircle2 size={15} /> Sin cobro de abono previo</div>
+              <div className="space-y-3 relative z-10">
+                <div className="inline-flex items-center gap-2 bg-[#1A1A2E] text-[#C4A882] text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-2">
+                  <Sparkles size={12} /> Recomendado para pauta
                 </div>
+                <h3 className="font-serif text-4xl font-bold">Super Combo Plus</h3>
+                <p className="font-sans text-base font-semibold">4 zonas + 1 zona adicional GRATIS</p>
               </div>
-
-              <div className="text-center lg:text-right space-y-4 shrink-0 bg-white/5 p-8 rounded-2xl border border-white/10 w-full lg:w-auto">
-                <div className="font-sans text-xs uppercase tracking-wider text-[#FDF6EE]/60">Precio Especial Paquete</div>
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-[#C4A882]">
-                  {getPrice('LAS-009', '$1.000.000 COP')}
-                </div>
-                <a
-                  href="https://wa.me/573100000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-[#C4A882] text-[#1A1A2E] font-sans text-xs font-bold uppercase tracking-widest py-4 px-8 rounded-full hover:bg-white transition-all shadow-xl text-center"
-                >
-                  Agendar Super Combo
-                </a>
+              <div className="text-right flex flex-col items-center md:items-end relative z-10 mt-6 md:mt-0">
+                <div className="font-serif text-5xl md:text-6xl font-bold mb-4">$1.000.000</div>
+                <a href="https://wa.me/573100000000" target="_blank" rel="noopener noreferrer" className="bg-[#1A1A2E] text-[#C4A882] text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-[#1A1A2E] transition-colors shadow-xl">Lo Quiero Ya</a>
               </div>
             </div>
-          </div>
-        </Reveal>
 
+            {[
+              { z: 'Paquete 2 Zonas', p: '$900.000' },
+              { z: 'Paquete 3 Zonas', p: '$1.050.000' },
+              { z: 'Paquete 4 Zonas', p: '$1.300.000' },
+              { z: 'Paquete 6 Zonas', p: '$1.500.000' },
+              { z: 'Full Body', d: 'Cuerpo Completo - Zonas delimitadas', p: '$2.000.000' },
+              { z: 'Full Body VIP', d: 'Zonas Ilimitadas', p: '$2.500.000' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/5 border border-[#C4A882]/30 p-8 rounded-2xl text-center hover:bg-white/10 hover:border-[#C4A882] transition-colors flex flex-col justify-between h-full shadow-lg">
+                <h3 className="font-sans text-xl font-bold text-[#FDF6EE] mb-2">{item.z}</h3>
+                {item.d && <div className="text-sm text-[#FDF6EE]/60 mb-6">{item.d}</div>}
+                {!item.d && <div className="mb-6"></div>}
+                <div className="font-serif text-4xl font-bold text-[#C4A882]">{item.p}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <Footer onNavigate={onNavigate} />
+      {/* Ficha Técnica Comercial */}
+      <section className="bg-[#FDF6EE] py-20 px-6 lg:px-12 border-t border-[#C4A882]/20">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-[#C4A882]/30 flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:w-1/2 space-y-6">
+              <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-[#C4A882]">Ficha Técnica Comercial</span>
+              <h2 className="font-serif text-4xl font-semibold text-[#1A1A2E]">NewAge Fénix EV 2025N</h2>
+              <p className="font-sans text-sm md:text-base text-[#1A1A2E]/80 leading-relaxed">
+                "En Sierva María utilizamos tecnología de vanguardia con la plataforma <strong>NewAge Fénix Evolution 2025N</strong>. Este no es un láser tradicional; es un equipo médico de diodo de última generación diseñado para garantizar máxima eficacia y confort."
+              </p>
+            </div>
+            <div className="md:w-1/2 space-y-8">
+              <div className="flex items-start gap-5">
+                <div className="bg-[#C4A882]/20 p-3 rounded-full text-[#C4A882] shrink-0"><Sparkles size={24} /></div>
+                <div>
+                  <h4 className="font-bold text-[#1A1A2E] text-lg mb-1">Tecnología Indolora</h4>
+                  <p className="text-sm text-[#1A1A2E]/70 leading-relaxed">Su sistema de refrigeración avanzado protege la piel y hace que la sesión sea altamente tolerable y sin tiempo de recuperación.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="bg-[#C4A882]/20 p-3 rounded-full text-[#C4A882] shrink-0"><CheckCircle2 size={24} /></div>
+                <div>
+                  <h4 className="font-bold text-[#1A1A2E] text-lg mb-1">Precisión en Todo Tipo de Piel</h4>
+                  <p className="text-sm text-[#1A1A2E]/70 leading-relaxed">Ajuste de fototipos que permite tratar desde vellos finos y claros hasta vellos gruesos en pieles bronceadas.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="bg-[#C4A882]/20 p-3 rounded-full text-[#C4A882] shrink-0"><Clock size={24} /></div>
+                <div>
+                  <h4 className="font-bold text-[#1A1A2E] text-lg mb-1">Sesiones Rápidas</h4>
+                  <p className="text-sm text-[#1A1A2E]/70 leading-relaxed">Su cabezal de alta frecuencia reduce drásticamente el tiempo en camilla, entregando resultados definitivos desde las primeras sesiones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// BOTÓN FLOTANTE WHATSAPP
-// ══════════════════════════════════════════════════════════════════════════════
-function WhatsAppFloating() {
-  return (
-    <a
-      href="https://wa.me/573100000000"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
-    >
-      <MessageSquare size={24} />
-      <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-sans text-xs font-bold uppercase tracking-wider pl-0 group-hover:pl-2">
-        Agendar Cita
-      </span>
-    </a>
-  )
-}
 
 // ══════════════════════════════════════════════════════════════════════════════
 // MAIN APP COMPONENT & ROUTER
