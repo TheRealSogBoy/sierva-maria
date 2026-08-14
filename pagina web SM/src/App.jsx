@@ -734,6 +734,7 @@ function HomePage({ onNavigate }) {
 // VISTA 2: PÁGINA DE ARMONIZACIÓN FACIAL E INYECTABLES (/armonizacion)
 // ══════════════════════════════════════════════════════════════════════════════
 function ArmonizacionPage({ onNavigate }) {
+  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
       <section className="bg-[#1A1A2E] text-[#FDF6EE] py-20 md:py-28 px-6 lg:px-12 relative overflow-hidden">
@@ -763,16 +764,16 @@ function ArmonizacionPage({ onNavigate }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors">
               <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Limpieza Facial Basic</h3>
-              <div className="font-serif text-4xl font-bold text-[#C4A882]">$50.000</div>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">{getPrice('Limpieza Facial Basic', '$50.000')}</div>
             </div>
             <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors relative">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C4A882] text-[#1A1A2E] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">Recomendado</span>
               <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Limpieza Facial Premium</h3>
-              <div className="font-serif text-4xl font-bold text-[#C4A882]">$100.000</div>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">{getPrice('Limpieza Facial Premium', '$100.000')}</div>
             </div>
             <div className="bg-white border border-[#C4A882]/30 p-8 rounded-2xl text-center shadow-lg hover:border-[#C4A882] transition-colors">
               <h3 className="font-sans text-xl font-bold text-[#1A1A2E] mb-4">Plasma Facial (Solo)</h3>
-              <div className="font-serif text-4xl font-bold text-[#C4A882]">$200.000</div>
+              <div className="font-serif text-4xl font-bold text-[#C4A882]">{getPrice('Plasma Facial (Solo)', '$200.000')}</div>
             </div>
           </div>
         </div>
@@ -800,7 +801,7 @@ function ArmonizacionPage({ onNavigate }) {
                       {item.desc && <div className="text-xs font-normal text-[#1A1A2E]/60 mt-1">({item.desc})</div>}
                     </td>
                     <td className="py-5 px-8 font-bold text-[#C4A882] text-right whitespace-nowrap text-lg">
-                      {item.price}
+                      {getPrice(item.name, item.price)}
                     </td>
                   </tr>
                 ))}
@@ -830,7 +831,7 @@ function ArmonizacionPage({ onNavigate }) {
               ].map((c, i) => (
                 <div key={i} className="bg-white border border-[#C4A882]/30 p-6 rounded-2xl flex justify-between items-center shadow-md">
                   <div className="font-semibold text-[#1A1A2E] text-lg">{c.name}</div>
-                  <div className="font-bold text-[#C4A882] text-xl">{c.price}</div>
+                  <div className="font-bold text-[#C4A882] text-xl">{getPrice(c.name, c.price)}</div>
                 </div>
               ))}
             </div>
@@ -844,7 +845,7 @@ function ArmonizacionPage({ onNavigate }) {
               ].map((c, i) => (
                 <div key={i} className="bg-white border border-[#C4A882]/30 p-6 rounded-2xl flex justify-between items-center shadow-md">
                   <div className="font-semibold text-[#1A1A2E] text-lg">{c.name}</div>
-                  <div className="font-bold text-[#C4A882] text-xl">{c.price}</div>
+                  <div className="font-bold text-[#C4A882] text-xl">{getPrice(c.name, c.price)}</div>
                 </div>
               ))}
             </div>
@@ -881,7 +882,7 @@ function ArmonizacionPage({ onNavigate }) {
                   {group.items.map((item, j) => (
                     <div key={j} className="flex flex-col gap-2">
                       <div className="text-sm text-[#FDF6EE]/90 leading-tight">{item.name}</div>
-                      <div className="font-serif text-2xl font-bold text-[#C4A882]">{item.price}</div>
+                      <div className="font-serif text-2xl font-bold text-[#C4A882]">{getPrice(item.name, item.price)}</div>
                     </div>
                   ))}
                 </div>
@@ -912,6 +913,7 @@ function ArmonizacionPage({ onNavigate }) {
 // VISTA 3: PÁGINA DE DEPILACIÓN LÁSER AVANZADA (/laser)
 // ══════════════════════════════════════════════════════════════════════════════
 function LaserPage({ onNavigate }) {
+  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
       <section className="bg-[#1A1A2E] text-[#FDF6EE] py-20 md:py-28 px-6 lg:px-12 relative overflow-hidden">
@@ -964,7 +966,7 @@ function LaserPage({ onNavigate }) {
                     <div className="font-semibold text-[#1A1A2E] text-base">{item.z}</div>
                     {item.d && <div className="text-xs text-[#1A1A2E]/60 mt-1">{item.d}</div>}
                   </div>
-                  <div className="font-bold text-[#C4A882] text-right text-lg">{item.p}</div>
+                  <div className="font-bold text-[#C4A882] text-right text-lg">{getPrice(item.z, item.p)}</div>
                 </div>
               ))}
             </div>
@@ -993,7 +995,7 @@ function LaserPage({ onNavigate }) {
                 <p className="font-sans text-base font-semibold">4 zonas + 1 zona adicional GRATIS</p>
               </div>
               <div className="text-right flex flex-col items-center md:items-end relative z-10 mt-6 md:mt-0">
-                <div className="font-serif text-5xl md:text-6xl font-bold mb-4">$1.000.000</div>
+                <div className="font-serif text-5xl md:text-6xl font-bold mb-4">{getPrice('Super Combo Plus', '$1.000.000')}</div>
                 <a href="https://wa.me/573100000000" target="_blank" rel="noopener noreferrer" className="bg-[#1A1A2E] text-[#C4A882] text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-[#1A1A2E] transition-colors shadow-xl">Lo Quiero Ya</a>
               </div>
             </div>
@@ -1010,7 +1012,7 @@ function LaserPage({ onNavigate }) {
                 <h3 className="font-sans text-xl font-bold text-[#FDF6EE] mb-2">{item.z}</h3>
                 {item.d && <div className="text-sm text-[#FDF6EE]/60 mb-6">{item.d}</div>}
                 {!item.d && <div className="mb-6"></div>}
-                <div className="font-serif text-4xl font-bold text-[#C4A882]">{item.p}</div>
+                <div className="font-serif text-4xl font-bold text-[#C4A882]">{getPrice(item.z, item.p)}</div>
               </div>
             ))}
           </div>
@@ -1098,7 +1100,7 @@ export default function App() {
   const [prices, setPrices] = useState({});
 
   useEffect(() => {
-    fetch('https://script.google.com/macros/s/AKfycbzlkXK-cehnWhrfMrcu5R6zmpzHCNgpiZ2yCydCYf8kfAu1tYTB-pu0Q7XI7e8UVeNT/exec')
+    fetch(`https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnS6H1l8B150crNkdBZZFy3qCE_dLpHty0KMydCmhjOWLL6RsuU6cfKASiSN_tbMzyTNMmF8ZT1I_LgQd5kEZ-XjBYsxV_x67U4mLy8BuCNOqRnCfJZ937P6QGnC6xVbfEKsVWR1fbSJ4-66EgLSxvlNYmO5qiwRQ8cbnFngh-OnrmhmHpWQ0OcNLZgJ2isx-Otj7nP1rWLSdmTAkVcOmqhuEbSbYIUaV09UMcatAiAMi98-DaFW7oKjzUp0Szt6hpplUIm8J0Sh1vyJmU4jpHhnBP1kYg&lib=MrZ57dsGJina9QcVtix2-FYkXBSdOl3WC&t=${new Date().getTime()}`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -1110,6 +1112,7 @@ export default function App() {
                 formattedPrice = '$' + item.Precio.toLocaleString('es-CO').replace(/,/g, '.') + ' COP';
               }
               newPrices[item.ID] = formattedPrice;
+              if (item.Servicio) newPrices[item.Servicio] = formattedPrice;
             }
           });
           setPrices(newPrices);
