@@ -8,6 +8,10 @@ import {
   HelpCircle, Activity, Sparkle
 } from 'lucide-react'
 
+import doctorImg from './assets/doctor-steven.webp'
+import armonizacionImg from './assets/armonizacion-facial.webp'
+import laserImg from './assets/depilacion-laser.webp'
+
 // ══════════════════════════════════════════════════════════════════════════════
 // LOGO SVG — Monograma "SM" Oficial de la marca con fill="currentColor"
 // ══════════════════════════════════════════════════════════════════════════════
@@ -556,7 +560,7 @@ function HomePage({ onNavigate }) {
               <div className="bg-[#1A1A2E] text-[#FDF6EE] rounded-3xl flex flex-col justify-between h-full hover:-translate-y-1 transition-transform duration-500 shadow-2xl border border-white/5 relative overflow-hidden group">
                 <div className="relative overflow-hidden h-56 rounded-t-3xl">
                   <img
-                    src="/src/assets/armonizacion-facial.webp"
+                    src={armonizacionImg}
                     alt="Armonización Facial con ácido hialurónico"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
@@ -601,7 +605,7 @@ function HomePage({ onNavigate }) {
               <div className="bg-[#1A1A2E] text-[#FDF6EE] rounded-3xl flex flex-col justify-between h-full hover:-translate-y-1 transition-transform duration-500 shadow-2xl border border-white/5 relative overflow-hidden group">
                 <div className="relative overflow-hidden h-56 rounded-t-3xl">
                   <img
-                    src="/src/assets/depilacion-laser.webp"
+                    src={laserImg}
                     alt="Depilación Láser Especializada"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
@@ -653,7 +657,7 @@ function HomePage({ onNavigate }) {
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 w-full h-full border border-[#C4A882]/40 rounded-2xl" />
                   <img
-                    src="/src/assets/doctor-steven.webp"
+                    src={doctorImg}
                     alt="Dr. Steven Cuervo Parra — Director Médico de Sierva María"
                     className="w-full h-[460px] object-cover object-center rounded-2xl relative z-10 shadow-lg"
                   />
