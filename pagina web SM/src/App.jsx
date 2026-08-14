@@ -1,4 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, createContext, useContext } from 'react'
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CMS CONTEXT - GOOGLE SHEETS
+// ══════════════════════════════════════════════════════════════════════════════
+const PricesContext = createContext({ getPrice: (id, f) => f });
+const usePrices = () => useContext(PricesContext);
+
 import {
   ShieldCheck, CheckCircle2, CreditCard, MapPin, Phone,
   Instagram, Menu, X, ArrowRight, ArrowDown, Sparkles, Zap,
@@ -724,6 +731,7 @@ function HomePage({ onNavigate }) {
 // VISTA 2: PÁGINA DE ARMONIZACIÓN FACIAL E INYECTABLES (/armonizacion)
 // ══════════════════════════════════════════════════════════════════════════════
 function ArmonizacionPage({ onNavigate }) {
+  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
       {/* Hero Banner Navy */}
@@ -817,7 +825,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Aplicación localizada por zona muscular. Marcación de prevención de arrugas dinámicas.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $350.000 – $400.000
+                      {getPrice('TOX-001', '$350.000 – $400.000')}
                     </td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
@@ -829,7 +837,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Ajuste completo de expresión sin perder naturalidad. Incluye cita de control y retoque a los 12-15 días.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $650.000 – $750.000
+                      {getPrice('TOX-002', '$650.000 – $750.000')}
                     </td>
                   </tr>
                   <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
@@ -841,7 +849,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Definición del óvalo facial y relajación de bandas platismales del cuello.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $550.000 – $650.000
+                      {getPrice('TOX-003', '$550.000 – $650.000')}
                     </td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
@@ -853,7 +861,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Tratamiento funcional para bruxismo y afinamiento del tercio inferior del rostro.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $500.000 – $700.000
+                      {getPrice('TOX-004', '$500.000 – $700.000')}
                     </td>
                   </tr>
                   <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
@@ -865,7 +873,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Bloqueo de sudoración excesiva en axilas o palmas de las manos. Duración 6-9 meses.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $900.000 – $1.200.000
+                      {getPrice('TOX-005', '$900.000 – $1.200.000')}
                     </td>
                   </tr>
                 </tbody>
@@ -921,7 +929,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Técnica de eversión, perfilado de borde labial e hidratación profunda con volumen natural.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $650.000 – $800.000
+                      {getPrice('HA-001', '$650.000 – $800.000')}
                     </td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
@@ -933,7 +941,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Corrección de hundimiento de fosa lacrimal mediante cánula médica de alta precisión.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $750.000 – $850.000
+                      {getPrice('HA-002', '$750.000 – $850.000')}
                     </td>
                   </tr>
                   <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
@@ -945,7 +953,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Levantamiento de punta nasal y rectificación de giba o dorso. Resultado inmediato sin cirugía.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $700.000 – $850.000
+                      {getPrice('HA-003', '$700.000 – $850.000')}
                     </td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
@@ -957,7 +965,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Proyección estructural del tercio inferior para lograr simetría de perfil.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $650.000 – $750.000
+                      {getPrice('HA-004', '$650.000 – $750.000')}
                     </td>
                   </tr>
                   <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
@@ -969,7 +977,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Reposicionamiento de tercios faciales y soporte estructural medio.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $650.000 – $750.000
+                      {getPrice('HA-005', '$650.000 – $750.000')}
                     </td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
@@ -981,7 +989,7 @@ function ArmonizacionPage({ onNavigate }) {
                       Definición de bordes y ángulos mandibulares para masculinización o perfilado femenino.
                     </td>
                     <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">
-                      $650.000 – $750.000
+                      {getPrice('HA-006', '$650.000 – $750.000')}
                     </td>
                   </tr>
                 </tbody>
@@ -1007,49 +1015,49 @@ function ArmonizacionPage({ onNavigate }) {
                 {
                   title: 'Radiesse®',
                   desc: 'Inducción de colágeno tipo I y III (Hidroxiapatita Cálcica). Tensa la piel, combate flacidez y recupera densidad.',
-                  price: '$1.200.000 – $1.400.000',
+                  price: getPrice('BIO-001', '$1.200.000 – $1.400.000'),
                   badge: '1 Vial'
                 },
                 {
                   title: 'Sculptra®',
                   desc: 'Bioestimulador neocollagenéico progresivo (Ácido Poli-L-Láctico). Ideal para pérdida de volumen severa y firmeza.',
-                  price: '$1.500.000 – $1.800.000',
+                  price: getPrice('BIO-002', '$1.500.000 – $1.800.000'),
                   badge: '1 Vial'
                 },
                 {
                   title: 'HarmonyCa®',
                   desc: 'Efecto lifting inmediato por ácido hialurónico + estimulación sostenida por hidroxiapatita cálcica.',
-                  price: '$1.600.000 – $1.900.000',
+                  price: getPrice('BIO-003', '$1.600.000 – $1.900.000'),
                   badge: '1 Vial Híbrido'
                 },
                 {
                   title: 'Profhilo®',
                   desc: 'Ácido hialurónico ultrapuro de alta concentración. Bioremodelación celular sin aportar volumen.',
-                  price: '$1.100.000 – $1.300.000',
+                  price: getPrice('BIO-004', '$1.100.000 – $1.300.000'),
                   badge: '2 ml Bioremodelador'
                 },
                 {
                   title: 'Dermapen + NCTF 135HA',
                   desc: 'Microneedling médico con cóctel de polirevitalización Filorga/NCTF para luminosidad y poros.',
-                  price: '$250.000 – $350.000',
+                  price: getPrice('BIO-005', '$250.000 – $350.000'),
                   badge: 'Cóctel Activo'
                 },
                 {
                   title: 'Lipopapa Enzimática',
                   desc: 'Enzimas recombinantes PBSerum (Lipasa, Colagenasa, Hialuronidasa) para reducción de grasa submentoniana.',
-                  price: '$180.000 – $250.000 / sesión',
+                  price: getPrice('BIO-006', '$180.000 – $250.000 / sesión'),
                   badge: 'Pack 3: $450k – $600k'
                 },
                 {
                   title: 'Hilos Tensores / Espiculados',
                   desc: 'Tracción y lifting mecánico no quirúrgico para definición de mejillas y tercio inferior.',
-                  price: '$150.000 – $200.000 / hilo',
+                  price: getPrice('BIO-007', '$150.000 – $200.000 / hilo'),
                   badge: 'Lifting Mecánico'
                 },
                 {
                   title: 'HydraFacial / Peeling Médico',
                   desc: 'Microdermoabrasión con sueros médicos o renovación celular profunda con ácidos estéticos.',
-                  price: '$200.000 – $280.000',
+                  price: getPrice('BIO-008', '$200.000 – $280.000'),
                   badge: 'Renovación Celular'
                 },
               ].map((item, idx) => (
@@ -1098,7 +1106,7 @@ function ArmonizacionPage({ onNavigate }) {
               {[
                 {
                   name: 'Combo Glow Facial',
-                  price: '$320.000 COP',
+                  price: getPrice('CMB-001', '$320.000 COP'),
                   includes: [
                     'Limpieza Facial Profunda',
                     'Dermapen con NCTF 135HA (Polirevitalización)',
@@ -1108,7 +1116,7 @@ function ArmonizacionPage({ onNavigate }) {
                 },
                 {
                   name: 'Combo Rejuvenecimiento Tercio Superior',
-                  price: '$1.250.000 – $1.400.000 COP',
+                  price: getPrice('CMB-002', '$1.250.000 – $1.400.000 COP'),
                   includes: [
                     'Toxina Botulínica Tercio Superior Completo (Frente + Entrecejo + Patas de Gallo)',
                     '1 ml Ácido Hialurónico (Labios u Ojeras)'
@@ -1117,7 +1125,7 @@ function ArmonizacionPage({ onNavigate }) {
                 },
                 {
                   name: 'Combo Perfilamiento Facial',
-                  price: '$1.300.000 COP',
+                  price: getPrice('CMB-003', '$1.300.000 COP'),
                   includes: [
                     'Rinomodelación con Ácido Hialurónico',
                     'Proyección Estructural de Mentón (1 ml)'
@@ -1126,7 +1134,7 @@ function ArmonizacionPage({ onNavigate }) {
                 },
                 {
                   name: 'Combo Armonización Full Face',
-                  price: '$2.400.000 – $2.800.000 COP',
+                  price: getPrice('CMB-004', '$2.400.000 – $2.800.000 COP'),
                   includes: [
                     'Bótox Tercio Superior Completo',
                     '3 ml Ácido Hialurónico a distribuir (Labios, Mentón, Pómulos)'
@@ -1188,6 +1196,7 @@ function ArmonizacionPage({ onNavigate }) {
 // VISTA 3: PÁGINA DE DEPILACIÓN LÁSER AVANZADA (/laser)
 // ══════════════════════════════════════════════════════════════════════════════
 function LaserPage({ onNavigate }) {
+  const { getPrice } = usePrices();
   return (
     <div className="pt-20">
       {/* Hero Banner Navy */}
@@ -1325,32 +1334,32 @@ function LaserPage({ onNavigate }) {
                     <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
                       Axilas, Bozo, Mentón, Patillas, Línea de Alba o Patillas.
                     </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">$40.000 – $60.000</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">$200.000 – $280.000</td>
+                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-001', '$40.000 – $60.000')}</td>
+                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-002', '$200.000 – $280.000')}</td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
                     <td className="py-4 px-6 font-semibold">Zona Mediana</td>
                     <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
                       Bikini Parcial, Media Pierna, Brazos Completos o Rostro Completo.
                     </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">$70.000 – $100.000</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">$350.000 – $450.000</td>
+                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-003', '$70.000 – $100.000')}</td>
+                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-004', '$350.000 – $450.000')}</td>
                   </tr>
                   <tr className="hover:bg-[#FDF6EE]/50 transition-colors">
                     <td className="py-4 px-6 font-semibold">Zona Grande</td>
                     <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
                       Piernas Completas, Bikini Completo + Espalda o Pecho.
                     </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">$120.000 – $160.000</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">$600.000 – $750.000</td>
+                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-005', '$120.000 – $160.000')}</td>
+                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-006', '$600.000 – $750.000')}</td>
                   </tr>
                   <tr className="bg-[#F7EEE3]/30 hover:bg-[#FDF6EE]/50 transition-colors">
                     <td className="py-4 px-6 font-semibold">Cuerpo Completo (Full Body)</td>
                     <td className="py-4 px-6 text-xs text-[#1A1A2E]/75 font-light">
                       Combinación de 3 o más zonas corporales completas.
                     </td>
-                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">$250.000 – $350.000</td>
-                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">$1.200.000 – $1.500.000</td>
+                    <td className="py-4 px-6 font-bold text-[#1A1A2E]">{getPrice('LAS-007', '$250.000 – $350.000')}</td>
+                    <td className="py-4 px-6 font-bold text-[#C4A882] text-right whitespace-nowrap">{getPrice('LAS-008', '$1.200.000 – $1.500.000')}</td>
                   </tr>
                 </tbody>
               </table>
@@ -1391,7 +1400,7 @@ function LaserPage({ onNavigate }) {
               <div className="text-center lg:text-right space-y-4 shrink-0 bg-white/5 p-8 rounded-2xl border border-white/10 w-full lg:w-auto">
                 <div className="font-sans text-xs uppercase tracking-wider text-[#FDF6EE]/60">Precio Especial Paquete</div>
                 <div className="font-serif text-4xl sm:text-5xl font-bold text-[#C4A882]">
-                  $1.000.000 COP
+                  {getPrice('LAS-009', '$1.000.000 COP')}
                 </div>
                 <a
                   href="https://wa.me/573100000000"
@@ -1446,6 +1455,34 @@ export default function App() {
     return 'home'
   })
 
+  // ══════════════════════════════════════════════════════════════════════════════
+  // FETCH CMS DATA (Silent/Async)
+  // ══════════════════════════════════════════════════════════════════════════════
+  const [prices, setPrices] = useState({});
+
+  useEffect(() => {
+    fetch('https://script.google.com/macros/s/AKfycbzlkXK-cehnWhrfMrcu5R6zmpzHCNgpiZ2yCydCYf8kfAu1tYTB-pu0Q7XI7e8UVeNT/exec')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          const newPrices = {};
+          data.forEach(item => {
+            if (item.Activo === "SI" || item.Activo === true) {
+              let formattedPrice = item.Precio;
+              if (typeof item.Precio === 'number') {
+                formattedPrice = '$' + item.Precio.toLocaleString('es-CO').replace(/,/g, '.') + ' COP';
+              }
+              newPrices[item.ID] = formattedPrice;
+            }
+          });
+          setPrices(newPrices);
+        }
+      })
+      .catch(err => console.error("Error silencioso fetch CMS:", err));
+  }, []);
+
+  const getPrice = (id, fallback) => prices[id] || fallback;
+
   // Handle route changes and scroll top
   const handleNavigate = (targetRoute, scrollToId = null) => {
     setRoute(targetRoute)
@@ -1486,16 +1523,18 @@ export default function App() {
   }, [])
 
   return (
-    <div className="bg-[#FDF6EE] text-[#1A1A2E] min-h-screen overflow-x-hidden">
-      <Navbar activeRoute={route} onNavigate={handleNavigate} />
+    <PricesContext.Provider value={{ getPrice }}>
+      <div className="bg-[#FDF6EE] text-[#1A1A2E] min-h-screen overflow-x-hidden">
+        <Navbar activeRoute={route} onNavigate={handleNavigate} />
 
-      <main>
-        {route === 'home' && <HomePage onNavigate={handleNavigate} />}
-        {route === 'armonizacion' && <ArmonizacionPage onNavigate={handleNavigate} />}
-        {route === 'laser' && <LaserPage onNavigate={handleNavigate} />}
-      </main>
+        <main>
+          {route === 'home' && <HomePage onNavigate={handleNavigate} />}
+          {route === 'armonizacion' && <ArmonizacionPage onNavigate={handleNavigate} />}
+          {route === 'laser' && <LaserPage onNavigate={handleNavigate} />}
+        </main>
 
-      <WhatsAppFloating />
-    </div>
+        <WhatsAppFloating />
+      </div>
+    </PricesContext.Provider>
   )
 }
