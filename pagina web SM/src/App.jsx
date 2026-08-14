@@ -1060,6 +1060,26 @@ function LaserPage({ onNavigate }) {
 
 
 // ══════════════════════════════════════════════════════════════════════════════
+// WHATSAPP FLOATING BUTTON
+// ══════════════════════════════════════════════════════════════════════════════
+function WhatsAppFloating() {
+  return (
+    <a
+      href="https://wa.me/573100000000"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
+    >
+      <MessageSquare size={24} />
+      <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-sans text-xs font-bold uppercase tracking-wider pl-0 group-hover:pl-2">
+        Agendar Cita
+      </span>
+    </a>
+  )
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
 // MAIN APP COMPONENT & ROUTER
 // ══════════════════════════════════════════════════════════════════════════════
 export default function App() {
